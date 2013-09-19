@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	//h1= title
+	//p Welcome to #{title}
+
+//
+	mixin field(type, name, label)
+		.field(class='field-' + type)
+		label #{label}:
+		input(type=type, name='user[#{name}]')
+
+	form
+		mixin field('text', 'name', 'Username')
+		mixin field('text', 'email', 'Email')
+		mixin field('password', 'pass', 'Password')
+		input(type='submit', value='Sign Up')
